@@ -19,7 +19,7 @@ from Utils import *
 class LoftrRunner:
   def __init__(self):
     default_cfg['match_coarse']['thr'] = 0.2
-    print("default_cfg",default_cfg)
+    # print("default_cfg",default_cfg)
     self.matcher = LoFTR(config=default_cfg)
     self.matcher.load_state_dict(torch.load(f'{code_dir}/BundleTrack/LoFTR/weights/outdoor_ds.ckpt')['state_dict'])
     self.matcher = self.matcher.eval().cuda()
